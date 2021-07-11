@@ -184,6 +184,24 @@ public class MyLinkedList {
         tail.next=null;
         head=first;
     }
+    //kth node from the end
+    public int kthNodeFromTheEnd(int k){
+        if(isEmpty()){
+            throw new IllegalStateException("List is empty");
+        }
+        Node end=head;
+        Node req=head;
+        for (int i=1;i<=k;i++){
+            end=end.next;
+            if(end==null)
+                throw new IllegalArgumentException("list is not that long: k>size");
+        }
+        while(end!=null){
+            req=req.next;
+            end=end.next;
+        }
+        return req.value;
+    }
     //show
     public void show(){
         Node node = head;
