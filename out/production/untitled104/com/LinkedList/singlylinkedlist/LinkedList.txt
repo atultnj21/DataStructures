@@ -17,3 +17,35 @@ we can get to tail but we cannot get back to the
 previous element using tail in singly linked list
 
 DELETION FROM MIDDLE- O(n)
+
+Difference Between Arrays and Linked List
+-----------------------------------------
+SPACE
+static arrays have a fixed size
+dynamic arrays grow by 50-100%
+Linked lists don't  waste memory
+Use arrays if you know the number of items to store
+
+Arrays
+Lookup
+   by index O(1)
+   by value O(n)
+Insert
+   beginning/end O(n)
+   middle        O(n)
+Delete
+   beginning     O(n)
+   middle        O(n)
+   end           O(n)
+
+Linked list
+Lookup
+   by index O(n)
+   by value O(n)
+Insert
+   beginning/end O(1)
+   middle        O(n)
+Delete
+   beginning     O(1)
+   middle        O(n)
+   end           O(n)

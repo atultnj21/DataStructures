@@ -148,16 +148,41 @@ public class MyLinkedList {
         return size;
     }
     //toArray
-    public int[] toArray(){
-        int array[]=new int[size];
-        int index=0;
+    public int[] toArray() {
+        int array[] = new int[size];
+        int index = 0;
         Node current = head;
-        while(current!=null){
-            array[index]=current.value;
+        while (current != null) {
+            array[index] = current.value;
             index++;
-            current=current.next;
+            current = current.next;
         }
         return array;
+    }
+
+    //reverse
+    public void reverse(){
+//     [1->2->3->4]
+//      f  s  t
+//     [1<-2 3->4]
+//      f  s  t
+        if(isEmpty()){
+            return;
+        }
+        Node first;
+        Node second;
+        Node third;
+        first=head;
+        second=head.next;
+        while(second!=null){
+            third=second.next;
+            second.next=first;
+            first=second;
+            second=third;
+        }
+        tail=head;
+        tail.next=null;
+        head=first;
     }
     //show
     public void show(){
