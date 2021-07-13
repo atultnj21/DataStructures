@@ -105,6 +105,23 @@ public class DoublyLinkedList {
             return;
         }
         Node current = tail;
+        Node temp=null;
+        while(current!=null){
+            temp=current.previous;
+            current.previous=current.next;
+            current.next=temp;
+            current=current.next;
+        }
+        temp = head;
+        head = tail;
+        tail= temp;
+    }
+    //Printeverse
+    public void printReverse(){
+        if (isEmpty()){
+            return;
+        }
+        Node current = tail;
         while(current.previous!=null){
             System.out.print(current.value + "->" );
             current=current.previous;

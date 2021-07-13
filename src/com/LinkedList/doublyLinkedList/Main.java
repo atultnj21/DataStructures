@@ -8,11 +8,15 @@ public class Main {
         list.addLast(4);
         list.addFirst(1);
         list.show();//1->2->3->4
-        list.reverse();//4->3->2->1
+        list.printReverse();//4->3->2->1
         list.removeFirst();
         list.show();//2->3->4
         list.removeLast();
         list.show();//2->3
         System.out.println(list.size());//2
+        list.show();//2->3
+        list.reverse();
+        list.show();//3->2
+        list.printReverse();//2->3
     }
 }
