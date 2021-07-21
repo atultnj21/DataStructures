@@ -1,0 +1,22 @@
+Arrays are our very first data structure
+we use them to store a ist of items sequentially
+
+Lookup O(1).
+
+arrays are static -> this means when  we allocate them
+we should specify their size
+
+resize
+
+10  20  30  40  50
+
+10  20  30  40  50  60
+
+O(n)
+
+removing an item
+
+Last item - O(1)
+
+beginning - O(n) ->worst case -> we have to shift all the
+items on the right one step to the left.
