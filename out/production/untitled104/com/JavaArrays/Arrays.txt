@@ -20,3 +20,8 @@ Last item - O(1)
 
 beginning - O(n) ->worst case -> we have to shift all the
 items on the right one step to the left.
+
+Dynamic  Arrays
+
+ArrayList
+Vector
