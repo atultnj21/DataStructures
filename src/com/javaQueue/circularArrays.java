@@ -16,7 +16,7 @@ class aArrayQueue{
     }
 
     public boolean isEmpty(){
-        return front==0;
+        return count==0;
     }
 
     public void enqueue(int item){
