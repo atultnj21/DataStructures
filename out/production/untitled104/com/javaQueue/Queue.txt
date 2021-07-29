@@ -1,3 +1,7 @@
+Queue is a list or collection with the restriction
+that insertion can be performed at one end (rear)
+and deletion can be performed at other end(front).
+
 A queue is a data structure similar to stack
 except in queue the first item inserted is the
 first one that can be removed this is what

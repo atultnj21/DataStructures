@@ -1,3 +1,4 @@
+//Q) Reversing a Queue Using Stack
 package com.javaQueue;
 
 import java.util.ArrayDeque;
