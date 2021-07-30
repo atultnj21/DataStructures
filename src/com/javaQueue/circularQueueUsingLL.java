@@ -32,8 +32,10 @@ class CircularListQueue{
             throw new IllegalStateException();
         }
         else if(front==rear){
+            Node temp=front;
             front=rear=null;
             count--;
+            return temp.data;
         }
         else{
             Node temp = front;
@@ -43,7 +45,6 @@ class CircularListQueue{
             rear.next=front;
             return temp.data;
         }
-        return -1;
     }
 
     public void print(){
