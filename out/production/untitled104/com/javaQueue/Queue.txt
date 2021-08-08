@@ -60,3 +60,9 @@ There are Basically 3 ways to implement a Queue
 
 we can store the items in an
 array,linkedList or via stack
+
+Priority Queue
+--------------
+it is a special type of queue in which the objects
+are processed based on their priorities not on the order
+they joined .
