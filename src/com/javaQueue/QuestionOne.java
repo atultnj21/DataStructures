@@ -10,6 +10,7 @@ Solution Steps
 2.Dequeue K items from the queue and push them into the stack, one by one.
 3.Enqueue the contents of the stack at the back of the queue
 4.Dequeue (size-k) elements from the front and enqueue them one by one in the same queue.
+
 */
 package com.javaQueue;
 
