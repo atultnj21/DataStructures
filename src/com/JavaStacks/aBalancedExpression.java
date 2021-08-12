@@ -35,7 +35,7 @@ class aExpressionChecker{
 public class aBalancedExpression {
     public static void main(String[] args) {
         aExpressionChecker exp = new aExpressionChecker();
-        var result=exp.isBalanced("[{(a+b)(a-b)}]");
-        System.out.println(result);//true
+        var result=exp.isBalanced("(()))");
+        System.out.println(result);//false
     }
 }
