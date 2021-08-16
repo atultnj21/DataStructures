@@ -1,0 +1,25 @@
+Doubly Linked List
+------------------
+doubly linked list is similar to singly linked list
+In addition each node have a reference to the previous
+node
+
+Singly Linked List
+DELETION From the end O(n)
+
+Doubly Linked List
+DELETION From the end O(1)
+
+each node will have an extra field that holds the address of
+the previous node
+
+One of the limitations of the singly linked list is that it can
+be traversed in only one direction that is forward. The doubly
+linked list has overcome this limitation by providing an additional
+pointer that points to the previous node. With the help of the
+previous pointer, the doubly linked list can be traversed in a
+backward direction thus making insertion and deletion operation
+easier to perform.
+
+Both doubly linked list and singly linked list can be circular
+i.e. the last node will reference to the first node

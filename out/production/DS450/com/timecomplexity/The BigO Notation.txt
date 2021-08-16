@@ -1,0 +1,17 @@
+We use the bigO notation to describe the performance of an
+operation .
+this helps us determine if a given algorithm is
+scalable or not,which basically means is this algorithm going
+to scale well as the input grows really large . just because your
+code executes quickly on your computer doesn't means its gonna
+perform well when you will give it a large amount of dataset.
+
+certain operations can be more or less costly depending on
+what data structures we use.
+ex: accessing an array element using index is super fast
+but arrays have a fixed length so if we wanna constantly
+add or remove items from them they have to get resized
+this will become costly as our input grows very large
+so, we can use another data structure called linked list,
+it can grow or shrink very frequently, but accessing a linked
+list element by its index slow

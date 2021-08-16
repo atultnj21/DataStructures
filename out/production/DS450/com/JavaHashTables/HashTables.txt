@@ -1,0 +1,36 @@
+Hash tables are also known as dictionaries.
+•spell checkers
+•dictionaries
+•compilers
+•code editors
+
+name in different languages
+• java -> HashMap
+• JavaScript -> Object
+• python ->  Dictionary
+• C# -> dictionary
+
+these are able to store-key value pairs
+ex:-employeeNumber employeeName
+
+hash function is deterministic.
+every time we give it the same inout it will return us the same value
+that is why we can use it for storing and retrieving objects.
+internally a hash table uses an array to store our objects.
+
+Operations
+• insert o(1)
+• lookup o(1)
+• delete o(1)
+
+the Interface Map<K,V>
+
+type parameters:
+K - the type of keys maintained by this map
+V - the type of mapped values
+
+https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/Map.html
+
+Mostly used
+HashMap
+
