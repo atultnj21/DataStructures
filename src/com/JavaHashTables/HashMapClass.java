@@ -66,6 +66,7 @@ public class HashMapClass {
         */
         //iterating over HashMap
         for(var item: map.entrySet()){
+//            System.out.println(item.getValue());
             System.out.println(item);
         }
         /*
