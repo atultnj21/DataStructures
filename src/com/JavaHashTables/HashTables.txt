@@ -34,3 +34,18 @@ https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/Map.html
 Mostly used
 HashMap
 
+ Hash Map basically maps a key to a value
+ we have another data structure called SET and sets only
+ have keys they don't have values, Sets just like Maps
+ don't allow duplicate keys.
+
+so lets say we have a list of numbers and in this list
+we have duplicates now we want to remove these duplicates
+all we have to do is to get each item and add it to the set
+because sets don't allow duplicates we will end up with a unique
+list of values . so that's one of the application of sets.
+
+https://docs.oracle.com/javase/8/docs/api/java/util/Set.html
+
+Mostly used:
+HashSet
