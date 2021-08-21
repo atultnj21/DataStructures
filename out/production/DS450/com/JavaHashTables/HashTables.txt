@@ -49,3 +49,13 @@ https://docs.oracle.com/javase/8/docs/api/java/util/Set.html
 
 Mostly used:
 HashSet
+
+Hash Table gets the Key,Based on this it figures out
+where to store this value in the memory , technically
+we store these values in an array , so in more accurate
+terms hash table maps this key to an index value the
+index at which we should store this value. this is then
+job of a hash function that gets a value and maps it to
+a different kind of value which we call a hash value/hash code
+or just hash in context of data structure hash function
+a key value to an index value.
