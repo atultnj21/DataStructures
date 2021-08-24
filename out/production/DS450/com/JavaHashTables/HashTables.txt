@@ -59,3 +59,128 @@ job of a hash function that gets a value and maps it to
 a different kind of value which we call a hash value/hash code
 or just hash in context of data structure hash function
 a key value to an index value.
+
+HASHING (Storing and retrieving data in O(1))
+
+Types of hash function
+(k % 10 , k % arr.length , Mid square , folding method)
+first two are used mostly
+Mid square ex:- 123 -> 2^2 =4
+folding ex:- 123456 -> array length 0to999
+  123
++ 456
+  579
+
+we are using:-
+hash function - key%arr.length
+
+ • Collision •
+ -------------
+ When generating hash values it is possible that two distinct
+ keys generate the same hash value.This is what we call a
+ Collision
+ we cannot store two items at the same index
+
+ • There are two ways to handle a collision:
+
+• OPEN HASHING(CLOSED ADDRESSING)
+One way is each cell in our array Point to a linked list
+so we are not gonna store the value in the array itself
+we are gonna store them in linked list
+if we have a collision we will simply add the new item at
+the end of the linked list this is what we call CHAINING.
+Advantages:-
+Deletion is easy
+Insertion O(1)
+
+Disadvantages:-
+Searching O(n)
+Deletion O(n)
+It is using extra space by creating nodes instead of adding to
+empty values in array.
+
+load factor = keys/slots
+
+• CLOSED HASHING(OPEN ADDRESSING)
+next way is to find a different slot for storing the second
+value this is what we call OPEN ADDRESSING because we are finding
+a new address to store the value ,There are different open addressing
+algorithms for this.
+we look for another empty slot this is called probing,we
+have to search for another location this is a reason why
+this approach is called open addressing because the address
+of key value pair is not determined by the hash function we
+have to search for another empty slot.
+
+• we have 3 searching/probing algorithms
+  •linear probing
+  •quadratic probing
+  •double hashing
+
+• Open addressing -LINEAR PROBING
+
+with this algorithm we start from the current slot if it is full
+we move to the next slot if it is full we go forward until we find
+an empty slot.
+
+what if we can't find any empty slot?
+that means our array is full. this is one of
+the drawback of linear probing
+with the chaining strategy we don't have this problem because our
+linked list will grow automatically
+
+• formula
+linear probing: hash(key)+i
+i here is the probe value i.e. how many times we have checked
+we start with the hash value and then increment it by 1 at each step
+i here is the variable that starts with 0 and gets incremented until
+we find a empty slot.
+it is possible that i ends up being outside of the boundary of our array
+so we should apply the modulus operator and reduce the result in a range
+that can fit in the array.
+
+(hash(key)+i)%HashTableSize
+
+• problem
+these items form a cluster next time we wanna add a new key value pair
+our probing is gonna take longer time we have to pass all these item in
+the cluster and add the item at the end of the cluster as a result our
+cluster will become bigger and again this will make future probings slower
+
+https://www.youtube.com/watch?v=go45eeMrwA4&list=PLxCzCOWd7aiHcmS4i14bI0VrMbZTUvlTa&index=52
+
+• Open Addressing - QUADRATIC PROBING
+
+ Clusters reduce Performance to solve this problem we can use quadratic
+ probing.
+
+ Quadratic - Quad (Squared)
+
+ • formula
+ quadratic probing: (hash(key)+i^2) % HashTableSize
+
+ With Linear probing we increment i by 1 in each step
+ so new key value pair gets stored next to each other
+ and form a cluster but if we raise i to the power of 2
+ our key value pairs are going to spread more widely.
+
+problem
+Because we are doing big jumps to find a slot we may get
+back to the beginning of the array and end up making the same
+steps , so we may end up in an infinite loop.
+
+• OPEN ADDRESSING - DOUBLE HASHING
+
+With this algorithm instead of i or i^2 we use a separate
+independent hash function to calculate the number of steps
+
+A popular second hash function:-
+
+hash2(key)= prime - (key % prime)
+(hash1(key)+ i * hash2(key)) % HashTableSize
+
+where prime no < size of table
+
+or you can take another function where
+hash2(key) & hashTableSize
+should be relatively prime
