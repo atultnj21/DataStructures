@@ -1,0 +1,67 @@
+TREES
+• Represent hierarchical data
+• Databases
+• Autocompletion
+• compilers
+• compression
+
+• NON - LINEAR DATA STRUCTURES
+  • Binary Trees
+  • AVL Trees
+  • Heaps
+  • Tries
+  • Graphs
+
+A tree is a data structure that stores elements in a hierarchy
+we refer to these elements as nodes and the lines that connect them
+as edges .
+The top node of the tree is called the ROOT node
+we refer to the children as leaf nodes
+
+BINARY TREE
+A binary tree is a tree data structure in which each node
+has at most two children
+
+BINARY SEARCH TREE
+
+          7
+        /   \
+      4       9
+    /   \    /  \
+   1     6  8    10
+
+It is a special type of BINARY TREE , it allows us to quickly
+look for data .
+special condition:
+left child < node < right child
+unlike Arrays or LinkedList we don't have to traverse this whole
+tree to find a value.
+
+Let's Say we are looking for 1 we start with the root node
+is 1 smaller or larger than the value of root node? it's smaller!
+So we look at the left sub-tree we don't care about the right
+sub-tree because we know all these nodes are greater than 7
+we are narrowing down our search .
+this tree has 7 nodes but we found our target node with
+only 3 comparisons , Because in every step we threw half of
+our nodes away this is what we call LOGARITHMIC TIME COMPLEXITY
+
+LOOKUP : O(log n)
+INSERT : O(log n)
+DELETE : O(log n)
+
+https://visualgo.net/en/bst
+
+Q) Add the following numbers to a binary search tree. Remember,
+in a binary search tree:
+left < parent
+right > parent
+[10, 5, 15, 6, 1, 8, 12, 18, 17]
+
+                   10
+                /      \
+              5          15
+           /   \        /   \
+         1       6     12    18
+                   \        /
+                     8    17
