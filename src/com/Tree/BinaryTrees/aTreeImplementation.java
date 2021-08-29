@@ -102,6 +102,23 @@ class aTree{
         System.out.print(root.value+" ");
     }
 
+// height
+// 1+max(height(L),height(R))
+    public int height(){
+        return height(root);
+    }
+    private int height(Node root){
+        // What if our tree is empty?
+        if(root==null)
+            return -1;
+
+        if(root.leftChild==null && root.rightChild==null)
+            return 0;
+        return 1+ Math.max(
+                height(root.leftChild),
+                height(root.rightChild));
+    }
+
 }
 
 public class aTreeImplementation {
@@ -120,6 +137,8 @@ public class aTreeImplementation {
         tree.traverseInorder();
         System.out.println();
         tree.traversePostorder();
+        System.out.println();
+        System.out.println(tree.height());//2
     }
 }
 /*

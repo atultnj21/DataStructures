@@ -154,6 +154,7 @@ Parent of B
  0 -> A
 
 • TRAVERSAL
+https://www.youtube.com/watch?v=gm8DUJJhmY4
 In LINEAR DATA STRUCTURES  like ARRAYS and LINKED LISTS we
 only have one way of traversal  we start at the first node
 and go forward until we reach the end .
