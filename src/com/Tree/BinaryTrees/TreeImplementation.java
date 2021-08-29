@@ -1,3 +1,4 @@
+//BST
 // Tree (root)
 // Node (leftChild,value,rightChild)
 // Insert(value)

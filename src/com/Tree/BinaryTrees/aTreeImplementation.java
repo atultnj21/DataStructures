@@ -1,3 +1,4 @@
+//BST
 package com.Tree.BinaryTrees;
 class aTree{
     private class Node{
@@ -61,6 +62,46 @@ class aTree{
 
         return false;
     }
+
+    public void traversePreorder(){
+        traversePreorder(root);
+    }
+    //preOrder : root left right
+    public void traversePreorder(Node root){
+        if(root==null){
+            return;
+        }
+        System.out.print(root.value+" ");
+        traversePreorder(root.leftChild);
+        traversePreorder(root.rightChild);
+    }
+
+    public void traverseInorder(){
+        traverseInorder(root);
+    }
+    //InOrder : left root right
+    public void traverseInorder(Node root){
+        if(root==null){
+            return;
+        }
+        traverseInorder(root.leftChild);
+        System.out.print(root.value+" ");
+        traverseInorder(root.rightChild);
+    }
+
+    public void traversePostorder(){
+        traversePostorder(root);
+    }
+    //preOrder :  left right root
+    public void traversePostorder(Node root){
+        if(root==null) {
+            return;
+        }
+        traversePostorder(root.leftChild);
+        traversePostorder(root.rightChild);
+        System.out.print(root.value+" ");
+    }
+
 }
 
 public class aTreeImplementation {
@@ -74,6 +115,11 @@ public class aTreeImplementation {
         tree.insert(8);
         tree.insert(10);
         System.out.println(tree.find(7));//true
+        tree.traversePreorder();
+        System.out.println();
+        tree.traverseInorder();
+        System.out.println();
+        tree.traversePostorder();
     }
 }
 /*
