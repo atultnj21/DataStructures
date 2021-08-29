@@ -119,6 +119,44 @@ class aTree{
                 height(root.rightChild));
     }
 
+//Minimun  O(n)
+    public int minValue(){
+        return minValue(root);
+    }
+    private int minValue(Node root){
+        if(root.leftChild==null && root.rightChild==null)
+            return root.value;
+        var left = minValue(root.leftChild);// minValue returns int
+        var right = minValue(root.rightChild);
+        return Math.min(Math.min(left,right),root.value);
+    }
+
+
+     /*if we are given a BST we will have a simpler way
+     to find the minimum value , we will just simply return the
+     left most value
+    public int minV(){
+        return minV(root);
+    }
+    private int minV(Node root){
+        if(root.leftChild==null )
+            return root.value;
+        var ans = minV(root.leftChild);
+        return ans;
+    }*/
+
+    //O(log n)
+    public int minV(){
+        if(root==null)
+            throw new IllegalStateException();
+        var current = root;
+        var last = current;
+        while (current!=null){
+            last=current;
+            current=current.leftChild;
+        }
+        return last.value;
+    }
 }
 
 public class aTreeImplementation {
@@ -139,6 +177,8 @@ public class aTreeImplementation {
         tree.traversePostorder();
         System.out.println();
         System.out.println(tree.height());//2
+        System.out.println(tree.minValue());//1
+        System.out.println(tree.minV());//1
     }
 }
 /*
