@@ -157,6 +157,25 @@ class aTree{
         }
         return last.value;
     }
+    //equals(Tree)
+    public boolean equality(aTree other){
+        if(other == null)
+            return false;
+        return eql(root,other.root);
+    }
+    //preorder algo (root left right)
+    private boolean eql(Node first,Node second){
+        if(first==null && second==null)
+            return true;
+
+        if(first!=null && second!=null){
+        return first.value==second.value
+                &&eql(first.leftChild,second.leftChild)
+                &&eql(first.rightChild,second.rightChild);
+        }
+        return false;
+    }
+
 }
 
 public class aTreeImplementation {
@@ -179,6 +198,17 @@ public class aTreeImplementation {
         System.out.println(tree.height());//2
         System.out.println(tree.minValue());//1
         System.out.println(tree.minV());//1
+
+        aTree tree2 = new aTree();
+        tree2.insert(7);
+        tree2.insert(4);
+        tree2.insert(9);
+        tree2.insert(1);
+        tree2.insert(6);
+        tree2.insert(8);
+        tree2.insert(10);
+        var result=tree.equality(tree2);
+        System.out.println(result);//true
     }
 }
 /*
