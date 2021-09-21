@@ -176,6 +176,25 @@ class aTree{
         return false;
     }
 
+    //validate
+    public boolean isValid(){
+        return isValid(root,Integer.MIN_VALUE,Integer.MAX_VALUE);
+    }
+    private boolean isValid(Node root,int min ,int max){
+        if(root==null)
+            return true;
+        if(root.value<min || root.value>max)
+            return false;
+        return isValid(root.leftChild,min, root.value-1)
+        && isValid(root.rightChild,root.value+1,max);
+    }
+
+    //swapRoot (to check validate method)
+    public void swapRoot(){
+        var temp=root.leftChild;
+        root.leftChild=root.rightChild;
+        root.rightChild=temp;
+    }
 }
 
 public class aTreeImplementation {
@@ -209,6 +228,9 @@ public class aTreeImplementation {
         tree2.insert(10);
         var result=tree.equality(tree2);
         System.out.println(result);//true
+        System.out.println(tree.isValid());//true
+        tree.swapRoot();
+        System.out.println(tree.isValid());//false
     }
 }
 /*
