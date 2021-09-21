@@ -1,5 +1,8 @@
 //BST
 package com.Tree.BinaryTrees;
+
+import java.util.ArrayList;
+
 class aTree{
     private class Node{
         private Node leftChild;
@@ -197,18 +200,20 @@ class aTree{
     }
 
     //NodeAtDistance
-    public void NodeAtDistance(int distance){
-         NodeAtDistance(root,distance);
+    public ArrayList<Integer> NodeAtDistance(int distance){
+        ArrayList<Integer> list = new ArrayList<>();
+         NodeAtDistance(root,distance,list);
+         return list;
     }
-    private void NodeAtDistance(Node root,int distance){
+    private void NodeAtDistance(Node root,int distance,ArrayList<Integer> list){
         if(root==null)
             return;
         if(distance==0) {
-            System.out.println(root.value);
+            list.add(root.value);
             return;
         }
-        NodeAtDistance(root.leftChild,distance-1);
-        NodeAtDistance(root.rightChild,distance-1);
+        NodeAtDistance(root.leftChild,distance-1,list);
+        NodeAtDistance(root.rightChild,distance-1,list);
     }
 
 }
@@ -247,7 +252,9 @@ public class aTreeImplementation {
         System.out.println(tree.isValid());//true
 //        tree.swapRoot();
 //        System.out.println(tree.isValid());//false
-        tree.NodeAtDistance(2);
+        var list=tree.NodeAtDistance(2);;
+        for(var item : list)
+            System.out.println(item);
 
     }
 }
