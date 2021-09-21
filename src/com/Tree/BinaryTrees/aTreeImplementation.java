@@ -195,6 +195,22 @@ class aTree{
         root.leftChild=root.rightChild;
         root.rightChild=temp;
     }
+
+    //NodeAtDistance
+    public void NodeAtDistance(int distance){
+         NodeAtDistance(root,distance);
+    }
+    private void NodeAtDistance(Node root,int distance){
+        if(root==null)
+            return;
+        if(distance==0) {
+            System.out.println(root.value);
+            return;
+        }
+        NodeAtDistance(root.leftChild,distance-1);
+        NodeAtDistance(root.rightChild,distance-1);
+    }
+
 }
 
 public class aTreeImplementation {
@@ -229,8 +245,10 @@ public class aTreeImplementation {
         var result=tree.equality(tree2);
         System.out.println(result);//true
         System.out.println(tree.isValid());//true
-        tree.swapRoot();
-        System.out.println(tree.isValid());//false
+//        tree.swapRoot();
+//        System.out.println(tree.isValid());//false
+        tree.NodeAtDistance(2);
+
     }
 }
 /*
