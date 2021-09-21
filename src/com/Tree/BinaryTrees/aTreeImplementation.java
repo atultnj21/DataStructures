@@ -216,6 +216,15 @@ class aTree{
         NodeAtDistance(root.rightChild,distance-1,list);
     }
 
+    //traverseLevelOrder
+    public void traverseLevelOrder(){
+        for (var i=0;i<=height();i++){
+            var list=NodeAtDistance(i);
+            for (var value:list)
+                System.out.println(value);
+        }
+    }
+
 }
 
 public class aTreeImplementation {
@@ -255,7 +264,8 @@ public class aTreeImplementation {
         var list=tree.NodeAtDistance(2);;
         for(var item : list)
             System.out.println(item);
-
+        System.out.println("Level order");
+        tree.traverseLevelOrder();
     }
 }
 /*
