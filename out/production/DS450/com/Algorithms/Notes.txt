@@ -1,0 +1,22 @@
+• Sorting Algorithms •
+• ------------------ •
+  •  Bubble sort
+  •  Selection sort
+  •  Insertion sort
+  •  Merge Sort
+  •  Quick Sort
+  •  Counting Sort
+  •  Bucket Sort
+
+• Bubble sort
+
+   Best case scenario
+   Passes O(1)
+   comparisons O(n)
+   total : O(n) Liner
+
+   Worst case scenario
+   Passes O(n)
+   comparisons O(n)
+   total : O(n^2)
+
