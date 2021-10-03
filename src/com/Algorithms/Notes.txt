@@ -20,3 +20,17 @@
    comparisons O(n)
    total : O(n^2)
 
+• Selection Sort
+
+   Best case scenario
+   Passes O(n)
+   comparisons O(n)
+   total : O(n^2) Quadratic
+
+   Worst case scenario
+   Passes O(n)
+   comparisons O(n)
+   total : O(n^2) Quadratic
+
+   selecting the minimum element
+
