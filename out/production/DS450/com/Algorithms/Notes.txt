@@ -34,3 +34,4 @@
 
    selecting the minimum element
 
+Insertion Sort
