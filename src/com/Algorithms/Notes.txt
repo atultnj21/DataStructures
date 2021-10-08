@@ -34,4 +34,37 @@
 
    selecting the minimum element
 
-Insertion Sort
+• Insertion Sort
+
+   Best case scenario
+   iterations O(n)
+   shift items O(1)
+   total : O(n) Linear
+
+   Worst case scenario
+   iterations O(n)
+   shift items O(n)
+   total : O(n^2) Quadratic
+
+• Merge Sort (DIVIDE AND CONQUER ALGORITHM)
+
+  The idea of merge sort is to break down the list
+  into smaller and smaller sublist sort those and
+  merge them back to a complete sorted list we Start
+  of by dividing the array into half we can find the
+  middle element by dividing the length of the array
+  by 2 . we are allocating additional space for this
+  algorithm to run We Will Keep On dividing the  list
+  into the sublist until we get the sublist having one
+  element only after that we will merge the sublist
+  and we will keep on merging the sublist to produce
+  a new sorted list
+
+               BEST          WORST
+
+   Dividing    O(log n)      O(log n)
+   Merging     O(n)          O(n)
+
+     total    O(n log n)    O(n log n)
+     space    O(n)          O(n)
+
