@@ -68,3 +68,7 @@
      total    O(n log n)    O(n log n)
      space    O(n)          O(n)
 
+• QuickSort
+    implemented by selecting first element as pivot
+
+
