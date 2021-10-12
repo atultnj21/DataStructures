@@ -68,3 +68,58 @@
      total    O(n log n)    O(n log n)
      space    O(n)          O(n)
 
+• QuickSort
+    implemented by selecting first element as pivot
+
+
+• Counting Sort
+
+    All the Sorting algorithms we have explored so far are
+    comparison based sorting algorithm.
+    we have some other bunch of algorithms that don't use
+    comparisons
+    • Counting Sort
+    • Bucket Sort
+    • Radix Sort
+
+    Counting sort is a sorting algorithm that sorts the elements
+    of an array by counting the number of occurrences of each
+    unique element in the array. The count is stored in an auxiliary
+    array and the sorting is done by mapping the count as an index
+    of the auxiliary array
+
+    • Working of Counting Sort
+     1. Find out the maximum element (let it be max) from the given array.
+
+     2. Initialize an array of length max+1 with all elements 0. This array
+        is used for storing the count of the elements in the array.
+
+     3. Store the count of each element at their respective index in
+        count array
+        For example: if the count of element 3 is 2 then, 2 is stored
+        in the 3rd position of count array. If element "5" is not present
+        in the array, then 0 is stored in 5th position.
+
+      4. Repopulate Input array according to counts .
+
+    • Space : O(K)      for counts array
+      where k is the max element in the array
+
+    • Time :
+         Populate counts array  :  O(n)  as this requires
+                                         iterating over the
+                                         input array
+
+         Iterate counts to refill
+         input array    :           O(K)
+
+         Total                      O(n+K)    -> linear
+
+         this comes with a cost i.e  TIME-MEMORY TRADE-OFF
+
+    • WHEN TO USE
+       • when allocating extra space is not an issue.
+       • All values are positive integers.
+       • Most of the values in the range are present.
+
+
