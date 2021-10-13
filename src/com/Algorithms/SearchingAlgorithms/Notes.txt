@@ -1,0 +1,63 @@
+• Searching Algorithms •
+•----------------------•
+
+   • Linear Search
+   • Binary Search
+   • Ternary Search
+   • Jump Search
+   • Exponential Search
+
+• Linear Search
+    Linear search is the simplest search algorithm . we iterate
+    over a list inspect each item, if we find it we return its
+    index otherwise we return -1 , meaning the item doesn't exist
+    in the list .
+
+                       Best         Worst
+    Time Complexity    O(1)         O(n)
+
+• Binary Search (Divide and Conquer Algorithm)
+    Binary Search is faster than Linear Search but it only works on
+    Sorted Lists , so if our input is not sorted we should either
+    sort it first and then use binary search , or we have to use
+    linear search depending upon the total cost.
+
+     0 1 2 3  4 5  6  7  8  9
+    [3,5,6,9,11,18,20,21,24,30]
+
+    Let's say we are looking for 6 in this list
+    first we look at the middle item
+
+    middle = (left+right)/2
+           = (0+9)/2  => 4
+
+    we have 11 in the middle the value we are looking for is 6
+    since our list is sorted and 6 is smaller than 11, so we know
+    if we have a 6, it will be on the left side .
+
+    Binary search is faster than linear search because in each step
+    we cut down the array by half .
+
+     0 1 2 3
+    [3,5,6,9]
+    now we repeat same steps with the partition on the left side of 11
+
+    middle = (0+3)/2 => 1
+
+    we have 5 in the middle the value we are looking for is 6
+    since our list is sorted and 6 is larger than 5, so we know
+    if we have a 6, it will be on the right side .
+
+     2 3
+    [6,9]
+    now we repeat same steps with the partition on the right side of 5.
+
+    middle = (2+3)/2 => 2
+    we have found 6 in the middle.
+
+    It took us 3 iterations even though we have 10 elements
+
+    Time Complexity : O(log n)
+    Space Complexity : O(log n) in Recursive
+                       O(1)     in Iterative
+
