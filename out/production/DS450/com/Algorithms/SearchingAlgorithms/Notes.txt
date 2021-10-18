@@ -61,3 +61,38 @@
     Space Complexity : O(log n) in Recursive
                        O(1)     in Iterative
 
+• Ternary Search
+    In ternary search instead of dividing the array into half at
+    every step we divide it into three parts here we have two middle
+    points mid1 and mid2
+
+     0  1   2  3   4   5   6   7   8   9
+    [3 ,5 , 6, 9, 11, 18, 20, 21, 24, 30]
+              m1          m2
+
+    partitionSize = (right - left/3)
+    mid1= left + partitionSize
+    mid2 = right - partitionSize
+
+    time complexity log3n  (log base 3 of n)
+
+    2^x=8            x=3
+    log28 =3        (log base 2 of 8 equals 3)
+    Logarithm tells us to which power should we raise a number
+    to get some other number .
+
+    log38=1.89
+
+    binarySearch                 TernarySearch
+
+    log2n                        log3n
+
+    3 comparisons only           target > mid2
+    target == mid                target == mid2
+    target > mid                 target < mid2 && target > mid1
+    target < mid                 target == mid1
+                                 target < mid1
+                                 5 comparisons
+
+    BinarySearch is faster than ternary search .
+

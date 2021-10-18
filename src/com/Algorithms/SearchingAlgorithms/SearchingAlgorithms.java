@@ -53,6 +53,29 @@ class Search{
         return -1;
     }
 
+    // TernarySearch Recursive
+    public int ternarySearchRecursion(int[] array , int target){
+        return ternarySearchRecursion(array,target,0,array.length-1);
+    }
+    private int ternarySearchRecursion(int[] array , int target ,int left,int right){
+        while (left<=right){
+            int partitionSize,mid1,mid2;
+            partitionSize = (right-left)/3;
+            mid1=left+partitionSize;
+            mid2=right-partitionSize;
+            if(target>array[mid2])
+                return ternarySearchRecursion(array,target,mid2+1,right);
+            if(target==array[mid2])
+                return mid2;
+            if(target<array[mid2]&&target>array[mid1])
+                return ternarySearchRecursion(array, target,mid1+1,mid2-1);
+            if(target<array[mid1])
+                return ternarySearchRecursion(array,target,left,mid1-1);
+            if(target==array[mid1])
+                return mid1;
+        }
+        return -1;
+    }
 
 }
 
@@ -74,6 +97,10 @@ public class SearchingAlgorithms {
         System.out.println("Binary Search Iterative");
         var indx = search.binarySearchIterative(arrSorted,5);
         System.out.println(indx);
+
+        System.out.println("Ternary Search Recursive");
+        var i = search.ternarySearchRecursion(arrSorted,30);
+        System.out.println(i);
     }
 
 }
