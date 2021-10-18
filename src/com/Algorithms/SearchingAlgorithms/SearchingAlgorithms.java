@@ -77,6 +77,28 @@ class Search{
         return -1;
     }
 
+    //JumpSearch
+    public int jumpSearch(int[] array, int target){
+        int blockSize = (int)Math.sqrt(array.length);
+
+        int start, next;
+        start=0;
+        next=blockSize;
+        while(array[next-1]<target){
+
+            start=next;
+            if(start>=array.length)
+                break;
+            next=next+blockSize;
+            if(next>array.length)
+                next=array.length;
+        }
+        for(int i =start;i<=next;i++){
+            if(array[i]==target)
+                return i;
+        }
+        return -1;
+    }
 }
 
 public class SearchingAlgorithms {
@@ -84,6 +106,7 @@ public class SearchingAlgorithms {
     public static void main(String[] args) {
         int[] arr = {7,1,3,6,5};
         int[] arrSorted ={3,5,6,9,11,18,20,21,24,30};
+        int[] temp ={3 ,5 , 6, 9, 11, 18, 20, 21, 24, 30};
         Search search = new Search();
 
         System.out.println("Linear Search");
@@ -101,6 +124,10 @@ public class SearchingAlgorithms {
         System.out.println("Ternary Search Recursive");
         var i = search.ternarySearchRecursion(arrSorted,30);
         System.out.println(i);
+
+        System.out.println("jumpSearch");
+        var in = search.jumpSearch(temp,21);
+        System.out.println(in);
     }
 
 }

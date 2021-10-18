@@ -96,3 +96,32 @@
 
     BinarySearch is faster than ternary search .
 
+• Jump Search
+    It is an improvement to Linear Search but it is not
+    as fast as binarySearch.
+    In jump search we divide the list into a few blocks
+    and instead of checking every item we jump to the
+    block where the target item may exist and perform
+    linear search only in that block .
+
+    blockSize = √n   (sqrt(n))
+
+         0  1   2  3   4   5   6   7   8   9
+        [3 ,5 , 6, 9, 11, 18, 20, 21, 24, 30]
+
+        blockSize=3
+        so we can divide this array into 4 blocks
+
+         0  1   2      3   4   5        6   7   8         9
+        [3 ,5 , 6,     9, 11, 18,      20, 21, 24,       30]
+
+        Instead of checking every single item in this array
+        we're gonna figure out in which block the target item
+        exists.
+
+        let's say we are looking for 23 we start from the first
+        block we compare the last item in this block with our target
+        value 6<23 so our target value will not be in this block
+        we perform this operation on other blocks to find our block
+
+        Time complexity : O(√n)
