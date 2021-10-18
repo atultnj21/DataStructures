@@ -99,6 +99,19 @@ class Search{
         }
         return -1;
     }
+
+    //ExponentialSearch
+    public int exponentialSearch(int[] array,int target){
+        int bound=1;
+        while(bound<array.length&&
+                array[bound]<target)
+        {
+            bound*=2;
+        }
+        int left = bound/2;
+        int right = Math.min(bound, array.length-1);
+        return binaryRecursive(array,target,left,right);
+    }
 }
 
 public class SearchingAlgorithms {
@@ -128,6 +141,11 @@ public class SearchingAlgorithms {
         System.out.println("jumpSearch");
         var in = search.jumpSearch(temp,21);
         System.out.println(in);
+
+        int[] a ={1,3,5,7,9};
+        System.out.println("Exponential search");
+        var indexx = search.exponentialSearch(a,18);
+        System.out.println(indexx);
     }
 
 }

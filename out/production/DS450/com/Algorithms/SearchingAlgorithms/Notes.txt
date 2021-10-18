@@ -124,4 +124,39 @@
         value 6<23 so our target value will not be in this block
         we perform this operation on other blocks to find our block
 
-        Time complexity : O(√n)
+        Time complexity : O(√n\
+
+• Exponential Search
+    In exponential search we start from a small range and see if the
+    target item is in that range or not then we double the range in
+    each step, once we find the range where the target item might exist
+    in , we'll do a binary search in that range .
+
+         0  1   2  3   4   5   6   7   8   9
+        [3 ,5 , 6, 9, 11, 18, 20, 21, 24, 30]
+
+        target = 19
+        b = bound = 1
+
+         0  1   2  3   4   5   6   7   8   9
+        [3 ,5 , 6, 9, 11, 18, 20, 21, 24, 30]
+            b
+            5<19 , so if 19 exists it'll definitely be after 5
+            so we will expand our range
+
+         0  1   2  3   4   5   6   7   8   9
+        [3 ,5 , 6, 9, 11, 18, 20, 21, 24, 30]
+                b
+                6<19
+
+         0  1   2  3   4   5   6   7   8   9
+        [3 ,5 , 6, 9, 11, 18, 20, 21, 24, 30]
+                       b
+                       11<19
+
+         0  1   2  3   4   5   6   7   8   9
+        [3 ,5 , 6, 9, 11, 18, 20, 21, 24, 30]
+                      ub               b
+                                       24<19 No
+                                       perform binary search
+    Time Complexity : O(log i)
