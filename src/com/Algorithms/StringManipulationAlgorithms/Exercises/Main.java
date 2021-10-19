@@ -6,6 +6,7 @@ public class Main {
         System.out.println(StringUtils.countVowels
                         ("HELLO"));//2
 
-        System.out.println();
+        System.out.println(StringUtils.stringReverse
+                ("hello"));//olleh
     }
 }
