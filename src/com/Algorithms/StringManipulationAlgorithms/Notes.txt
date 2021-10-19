@@ -1,0 +1,13 @@
+• Useful Java Methods •
+
+    String sentence = “trees are beautiful”;
+    String[] words = sentence.split(“ “);
+    int[] numbers = { 1, 2, 3 };
+    Arrays.sort(numbers);
+    boolean areEqual = Arrays.equals(array1, array2);
+    List<Integer> list = Arrays.asList(numbers);
+    Collections.sort(list);
+    Collections.reverse(list)
+
+
+

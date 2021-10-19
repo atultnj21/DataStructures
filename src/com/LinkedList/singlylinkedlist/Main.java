@@ -43,7 +43,7 @@ public class Main {
         System.out.println(list.kthNodeFromTheEnd(1));//1
         System.out.println(list.kthNodeFromTheEnd(2));//2
         System.out.println(list.kthNodeFromTheEnd(10));
-        /* Exception in thread "main" java.lang.IllegalArgumentException:
+        /* Exception in thread "Main" java.lang.IllegalArgumentException:
         list is not that long: k>size */
     }
 }

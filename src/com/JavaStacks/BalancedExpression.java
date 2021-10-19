@@ -39,7 +39,7 @@
 //    }
 //}
 //public class BalancedExpression {
-//    public static void main(String[] args) {
+//    public static void Main(String[] args) {
 //        expressionChecker expression = new expressionChecker();
 //        var result = expression.isBalanced("(()))");  -> this code breaks here check aBalancedExpression.java for working code
 //        System.out.println(result);//false

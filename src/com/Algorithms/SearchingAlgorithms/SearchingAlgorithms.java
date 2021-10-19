@@ -115,7 +115,7 @@ class Search{
 }
 
 public class SearchingAlgorithms {
-    //main
+    //Main
     public static void main(String[] args) {
         int[] arr = {7,1,3,6,5};
         int[] arrSorted ={3,5,6,9,11,18,20,21,24,30};
