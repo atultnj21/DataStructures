@@ -1,10 +1,7 @@
 package com.Algorithms.
         StringManipulationAlgorithms.Exercises;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 public class StringUtils {
     //countVowels
@@ -93,5 +90,18 @@ public class StringUtils {
         if(!((str1+str1)).contains(str2))
             return false;
         return true;*/
+    }
+
+    //removeDuplicates
+    public static String removeDuplicates(String str){
+        StringBuilder output = new StringBuilder();
+        Set<Character> seen = new HashSet<>();
+        for(var ch: str.toCharArray()){
+            if(!seen.contains(ch)){
+                seen.add(ch);
+                output.append(ch);
+            }
+        }
+        return output.toString();
     }
 }

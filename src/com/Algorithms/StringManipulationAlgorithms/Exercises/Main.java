@@ -15,5 +15,8 @@ public class Main {
 
         System.out.println(StringUtils.areRotations
                 ("ABCD","DABC"));//true
+
+        System.out.println(StringUtils.removeDuplicates
+                ("Hellooo!!"));
     }
 }
