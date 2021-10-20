@@ -66,4 +66,32 @@ public class StringUtils {
         Collections.reverse(Arrays.asList(words));
         return String.join(" ",words);
     }
+
+    //areRotations
+    /*
+    * ABCD -> DABC  1char
+    *      -> CDAB  2char      same length same order
+    *      -> BCDA  3char
+    *      -> ABCD  4char
+
+    * Approach :-
+      we will concatenate String 1 with itself
+      ABCDABCD so same sequence of characters
+      are repeated in same order this string
+      here contains DBAC ,CDAB ,BCDA,ABCD.
+    */
+    public static boolean areRotations(
+            String str1,String str2){
+
+        if(str1 == null || str2 == null)
+            return false;
+        return  (str1.length()==str2.length() &&
+                ((str1+str1)).contains(str2));
+
+        /*if(str1.length()!=str2.length())
+            return false;
+        if(!((str1+str1)).contains(str2))
+            return false;
+        return true;*/
+    }
 }

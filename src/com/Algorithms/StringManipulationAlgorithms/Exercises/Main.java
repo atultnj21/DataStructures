@@ -13,6 +13,7 @@ public class Main {
                 ("Trees are beautiful"));
                 //beautiful are Trees
 
-
+        System.out.println(StringUtils.areRotations
+                ("ABCD","DABC"));//true
     }
 }
