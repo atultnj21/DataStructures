@@ -8,5 +8,11 @@ public class Main {
 
         System.out.println(StringUtils.stringReverse
                 ("hello"));//olleh
+
+        System.out.println(StringUtils.reverseWords
+                ("Trees are beautiful"));
+                //beautiful are Trees
+
+
     }
 }

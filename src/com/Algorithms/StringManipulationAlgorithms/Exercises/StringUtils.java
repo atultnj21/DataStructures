@@ -1,6 +1,8 @@
 package com.Algorithms.
         StringManipulationAlgorithms.Exercises;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
@@ -47,5 +49,21 @@ public class StringUtils {
         the number of characters that should be copied to
         the new string object increases .
         */
+    }
+
+    //reverseWords
+    public static String reverseWords(String sentence){
+        if(sentence==null)
+            return "";
+        /*StringBuilder reversed = new StringBuilder();
+        String[] words = sentence.trim().split(" ");
+        for (int i = words.length-1;i>=0;i--)
+            reversed.append(words[i]+" ");
+        return reversed.toString();*/
+
+        StringBuilder reversed = new StringBuilder();
+        String[] words = sentence.trim().split(" ");
+        Collections.reverse(Arrays.asList(words));
+        return String.join(" ",words);
     }
 }
