@@ -27,5 +27,8 @@ public class Main {
                 capitaliseFirstLetter
                         ("   trees       are       beautiful   "));
                 //Trees Are Beautiful
+
+        System.out.println(StringUtils.
+                isAnagram("ABCd","DCBA"));//true
     }
 }

@@ -167,5 +167,57 @@ public class StringUtils {
         return String.join(" ",words);
     }
 
+    //isAnagram
+    public static boolean isAnagram(
+            String first , String second
+    ){
+       /*  //O(n log n)
+       if(first==null||second==null ||
+                first.length()  != second.length())
+            return false;
+
+        char[] array1 = first.toLowerCase().toCharArray(); //O(n)
+        Arrays.sort(array1); // uses quicksort O(n log n)
+
+        char[] array2 = second.toLowerCase().toCharArray();//O(n)
+        Arrays.sort(array2);//O(n log n )
+
+        return Arrays.equals(array1,array2); //O(n)
+        */
+
+        // Anagrams using histograming  (O(n))
+        final int ENGLISH_ALPHABET=26;
+        int[] frequencies = new int[ENGLISH_ALPHABET];
+
+        if(first==null||second==null ||
+                first.length()  != second.length())
+            return false;
+
+        first = first.toLowerCase();
+        //O(n)
+        for(int i =0 ; i<first.length();i++)
+            frequencies[first.charAt(i) - 'a']++;// 97
+
+        second = second.toLowerCase();
+        //O(n)
+        for(int i = 0 ; i<second.length();i++) {
+            int index =second.charAt(i) - 'a';  // to map
+            if(frequencies[index]==0)
+                return false;
+            frequencies[index]--;
+        }
+        return true;
+        /*
+        why i wrote
+        " if(frequencies[index]==0)
+                return false; "
+        this ?
+        for example take the the first string as ABCD
+        second string as EFGH after the first loop
+        frequencies will be {A=1,B=1,C=1D=1} , when
+        we will enter the secoond loop frequency of E
+        will be 0, so the strings are not anagrams hence
+        we return false . */
+    }
 }
 
