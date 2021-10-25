@@ -104,4 +104,50 @@ public class StringUtils {
         }
         return output.toString();
     }
+
+    //findMostRepeatedCharacter
+    public static char findMostRepeatedCharacter(String str){
+
+       /* if(str.isEmpty() || str == null)
+            throw new IllegalArgumentException();
+        Map<Character,Integer> frequencies = new HashMap<>();
+        for(var ch: str.toCharArray()){
+            int count = frequencies.containsKey(ch)
+                    ? frequencies.get(ch): 0 ;
+            frequencies.put(ch,count+1);
+        }
+        int max =0;
+        char result=' ';
+        for(var ch : str.toCharArray()){
+            if(frequencies.get(ch)>max){
+                max = frequencies.get(ch);
+                result = ch;
+            }
+        }
+        return result;*/
+
+        /* what if we don't have access to HashTables we
+           can use an integer array to store the frequencies
+           let's say our input value only contains ASCII values
+           AMERICAN STANDARD CODE FOR INFORMATION INTERCHANGE
+           its basically a table that maps various characters
+           to there standard numeric values in the computer */
+        if(str.isEmpty() || str == null)
+            throw new IllegalArgumentException();
+        final int ASCII_SIZE = 256;
+        int[] frequencies = new int[ASCII_SIZE];
+        for(char ch: str.toCharArray()){
+            frequencies[ch]++;
+        }
+        int max = 0 ;
+        char result = ' ';
+        for(int i = 0 ; i < frequencies.length ; i++){
+            if(frequencies[i]> max){
+                max = frequencies[i];
+                result = (char) i;
+            }
+        }
+        return result;
+    }
+
 }

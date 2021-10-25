@@ -18,5 +18,9 @@ public class Main {
 
         System.out.println(StringUtils.removeDuplicates
                 ("Hellooo!!"));
+
+        System.out.println(StringUtils.
+                findMostRepeatedCharacter
+                        ("Helloooo"));//o
     }
 }
