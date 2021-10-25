@@ -150,4 +150,22 @@ public class StringUtils {
         return result;
     }
 
+    //capitaliseFirstLetter
+    public static  String capitaliseFirstLetter(String sentence){
+        if( sentence==null || sentence.trim().isEmpty() )
+            return "";
+        // whenever we see one or more white space in between
+        // we will replace it with single whitespace by using
+        // regular expression(+)
+        String[] words = sentence.trim()
+                .replaceAll(" +"," ").
+                        split(" ");
+        for(int i=0;i<words.length;i++){
+            words[i]=words[i].substring(0,1).toUpperCase()
+                    +words[i].substring(1).toLowerCase();
+        }
+        return String.join(" ",words);
+    }
+
 }
+

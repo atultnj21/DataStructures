@@ -22,5 +22,10 @@ public class Main {
         System.out.println(StringUtils.
                 findMostRepeatedCharacter
                         ("Helloooo"));//o
+
+        System.out.println(StringUtils.
+                capitaliseFirstLetter
+                        ("   trees       are       beautiful   "));
+                //Trees Are Beautiful
     }
 }
