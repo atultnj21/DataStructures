@@ -219,5 +219,31 @@ public class StringUtils {
         will be 0, so the strings are not anagrams hence
         we return false . */
     }
+
+    //isPalindrome
+    public  static boolean isPalindrome(String word) {
+
+        /*if(word==null)
+            return false;
+        StringBuilder reversed = new StringBuilder();
+        for(int i = word.length()-1;i>=0;i--){
+            reversed.append(word.charAt(i));
+        }
+        String str1 = reversed.toString();
+        return word.equals(str1);*/
+
+        /* In java we cannot use two string for equality using
+         "==" operator because this will check the refrences of
+         these objects */
+
+        // Alternate way
+        int l = 0;
+        int r = word.length() - 1;
+        while (l < r) {
+            if (word.charAt(l++) != word.charAt(r--))
+                return false;
+        }
+        return true;
+    }
 }
 

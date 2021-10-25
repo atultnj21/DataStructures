@@ -30,5 +30,8 @@ public class Main {
 
         System.out.println(StringUtils.
                 isAnagram("ABCd","DCBA"));//true
+
+        System.out.println(StringUtils.
+                isPalindrome("ABBA"));//true
     }
 }
