@@ -123,3 +123,57 @@
        • Most of the values in the range are present.
 
 
+•  Bucket Sort
+    The idea of Bucket sort is to distribute items into a  number
+    of buckets,sort these buckets using another sorting algorithms
+    then combine them , with this approach instead of sorting a large
+    array we sort smaller buckets and this is gonna take less time.
+
+    [ 6, 2 ,5 ,4 ,3 ,7]
+
+    0[ ] -> 2
+    1[ ] -> 5 4 3
+    2[ ] -> 6 7
+
+    here we have an array of 6 items we divide these items into
+    3 buckets , each bucket will contain linked list  .
+
+    bucket = item/number of buckets
+
+    6/3 = 2
+    2/3 = 0
+    5/3 = 1
+    4/3 = 1
+    3/3 = 1
+    7/3 = 2
+
+    now we solve these buckets individually using another
+    sorting algorithm . finally we start iterating over the
+    buckets array get each item in each bucket and put it in
+    the input array .
+
+    space : assuming we have k buckets, we need to allocate
+            an array of k items . each item in this array is
+            gonna be a linked list
+            to no of items will the no of item in our input array
+
+            O(n+k)
+
+    Time :
+          first we need to iterate over our input array and
+          distribute each element into buckets.
+                             Best              Worst
+          • Distribution     O(n)              O(n)
+
+          then we need to iterate over the buckets array sort
+          each lists and put the items back into input array
+                                   Best              Worst
+          • iterating buckets      O(k)              O(k)
+
+                                  Best              Worst
+          • sorting               O(1)              O(k)
+
+                 total            O(n+k)            depends on sorting
+                                                    algorithm
+
+    this is another example of time memory trade-off.
