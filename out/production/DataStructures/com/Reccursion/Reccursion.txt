@@ -1,0 +1,10 @@
+• Recursion
+i.e. A function calling itself
+
+• Elaborated
+Recursion in computer science is a method where
+the solution to a problem depends on solution
+to smaller instances of the same problem .
+
+Smaller problems are exactly of the same nature as
+the original problem in hand .

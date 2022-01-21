@@ -53,7 +53,7 @@ Q) How Trees become Unbalanced?
     AVL Trees are special type of binary Search trees
     that Automatically re-balances themselves everytime
     we remove or add new Nodes.
-    They do this by ensuring height(left)-height(right)<=1
+    They do this by ensuring height(left)-height(right)<=1  ({-1,0,1})
     if the difference id more the re-balance themselves
     using Rotations.
 

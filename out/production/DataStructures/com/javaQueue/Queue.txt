@@ -1,0 +1,68 @@
+Queue is a list or collection with the restriction
+that insertion can be performed at one end (rear)
+and deletion can be performed at other end(front).
+
+A queue is a data structure similar to stack
+except in queue the first item inserted is the
+first one that can be removed this is what
+we call FIFO(first in first out).
+A queue in programming is like a line
+of people in the real world join from the
+back and leave from the front
+
+Applications
+
+we can use queues in situation where we have
+a resource and this resource must be shared
+among many consumers
+
+• printers -> use queue to manage jobs
+• operating systems -> use queue to manage processes
+• web servers -> use queue to manage incoming requests
+
+Operations
+
+o(1)
+
+enqueue -> adding an item to the back of the queue
+dequeue -> removing the item at the front of the queue
+peek()  -> returning the item at the front without removing it
+isEmpty()
+isFull()
+
+Queue is an interface in java we cannot instantiate it
+https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Queue.html
+over here you can see the classes that implements this interface
+out of all these implementations the two implementations
+that we use 90% of the time are ArrayDeque and LinkedList
+
+deque is short for double ended queue i.e. a queue that
+has two ends you can add items from any direction from left
+or from right internally this class use the resizeable array
+to store the items .
+
+methods
+--------
+enqueue
+add()
+offer()
+difference is if the queue gets full add will throw
+an exception but offer will not
+
+dequeue
+remove()
+poll()
+
+peek()
+element()
+
+There are Basically 3 ways to implement a Queue
+
+we can store the items in an
+array,linkedList or via stack
+
+Priority Queue
+--------------
+it is a special type of queue in which the objects
+are processed based on their priorities not on the order
+they joined .

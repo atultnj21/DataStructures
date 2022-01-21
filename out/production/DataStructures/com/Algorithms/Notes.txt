@@ -1,0 +1,179 @@
+• Sorting Algorithms •
+• ------------------ •
+  •  Bubble sort
+  •  Selection sort
+  •  Insertion sort
+  •  Merge Sort
+  •  Quick Sort
+  •  Counting Sort
+  •  Bucket Sort
+
+• Bubble sort
+
+   Best case scenario
+   Passes O(1)
+   comparisons O(n)
+   total : O(n) Liner
+
+   Worst case scenario
+   Passes O(n)
+   comparisons O(n)
+   total : O(n^2)
+
+• Selection Sort
+
+   Best case scenario
+   Passes O(n)
+   comparisons O(n)
+   total : O(n^2) Quadratic
+
+   Worst case scenario
+   Passes O(n)
+   comparisons O(n)
+   total : O(n^2) Quadratic
+
+   selecting the minimum element
+
+• Insertion Sort
+
+   Best case scenario
+   iterations O(n)
+   shift items O(1)
+   total : O(n) Linear
+
+   Worst case scenario
+   iterations O(n)
+   shift items O(n)
+   total : O(n^2) Quadratic
+
+• Merge Sort (DIVIDE AND CONQUER ALGORITHM)
+
+  The idea of merge sort is to break down the list
+  into smaller and smaller sublist sort those and
+  merge them back to a complete sorted list we Start
+  of by dividing the array into half we can find the
+  middle element by dividing the length of the array
+  by 2 . we are allocating additional space for this
+  algorithm to run We Will Keep On dividing the  list
+  into the sublist until we get the sublist having one
+  element only after that we will merge the sublist
+  and we will keep on merging the sublist to produce
+  a new sorted list
+
+               BEST          WORST
+
+   Dividing    O(log n)      O(log n)
+   Merging     O(n)          O(n)
+
+     total    O(n log n)    O(n log n)
+     space    O(n)          O(n)
+
+• QuickSort
+    implemented by selecting first element as pivot
+
+
+• Counting Sort
+
+    All the Sorting algorithms we have explored so far are
+    comparison based sorting algorithm.
+    we have some other bunch of algorithms that don't use
+    comparisons
+    • Counting Sort
+    • Bucket Sort
+    • Radix Sort
+
+    Counting sort is a sorting algorithm that sorts the elements
+    of an array by counting the number of occurrences of each
+    unique element in the array. The count is stored in an auxiliary
+    array and the sorting is done by mapping the count as an index
+    of the auxiliary array
+
+    • Working of Counting Sort
+     1. Find out the maximum element (let it be max) from the given array.
+
+     2. Initialize an array of length max+1 with all elements 0. This array
+        is used for storing the count of the elements in the array.
+
+     3. Store the count of each element at their respective index in
+        count array
+        For example: if the count of element 3 is 2 then, 2 is stored
+        in the 3rd position of count array. If element "5" is not present
+        in the array, then 0 is stored in 5th position.
+
+      4. Repopulate Input array according to counts .
+
+    • Space : O(K)      for counts array
+      where k is the max element in the array
+
+    • Time :
+         Populate counts array  :  O(n)  as this requires
+                                         iterating over the
+                                         input array
+
+         Iterate counts to refill
+         input array    :           O(K)
+
+         Total                      O(n+K)    -> linear
+
+         this comes with a cost i.e  TIME-MEMORY TRADE-OFF
+
+    • WHEN TO USE
+       • when allocating extra space is not an issue.
+       • All values are positive integers.
+       • Most of the values in the range are present.
+
+
+•  Bucket Sort
+    The idea of Bucket sort is to distribute items into a  number
+    of buckets,sort these buckets using another sorting algorithms
+    then combine them , with this approach instead of sorting a large
+    array we sort smaller buckets and this is gonna take less time.
+
+    [ 6, 2 ,5 ,4 ,3 ,7]
+
+    0[ ] -> 2
+    1[ ] -> 5 4 3
+    2[ ] -> 6 7
+
+    here we have an array of 6 items we divide these items into
+    3 buckets , each bucket will contain linked list  .
+
+    bucket = item/number of buckets
+
+    6/3 = 2
+    2/3 = 0
+    5/3 = 1
+    4/3 = 1
+    3/3 = 1
+    7/3 = 2
+
+    now we solve these buckets individually using another
+    sorting algorithm . finally we start iterating over the
+    buckets array get each item in each bucket and put it in
+    the input array .
+
+    space : assuming we have k buckets, we need to allocate
+            an array of k items . each item in this array is
+            gonna be a linked list
+            to no of items will the no of item in our input array
+
+            O(n+k)
+
+    Time :
+          first we need to iterate over our input array and
+          distribute each element into buckets.
+                             Best              Worst
+          • Distribution     O(n)              O(n)
+
+          then we need to iterate over the buckets array sort
+          each lists and put the items back into input array
+                                   Best              Worst
+          • iterating buckets      O(k)              O(k)
+
+                                  Best              Worst
+          • sorting               O(1)              O(k)
+
+                 total            O(n+k)            depends on sorting
+                                                    algorithm
+
+    this is another example of time memory trade-off.
