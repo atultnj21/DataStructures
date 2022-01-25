@@ -1,0 +1,167 @@
+• Heaps •
+- ----- -
+Heaps are another type of binary trees.
+Applications of heap
+• Sorting (HeapSort)
+• Graph Algorithms (Shortest Path) (power the gps)
+• Priority Queues
+• Finding the Kth smallest / largest values  (imp)
+
+Heap is a complete binary tree that satisfies heap property .
+
+A heap is a special type of tree with two properties:
+1) it is a complete tree
+    which means every level except potentially the last
+    level is completely filled . and levels are filled
+    from the left to the right
+
+    ex:
+           ()
+         /    \
+       ()       ()         This is a complete tree .
+      /  \     /  \
+    ()    () ()    ()
+
+           ()
+         /    \
+       ()       ()         This is also a complete tree
+      /  \     /           all the levels except the last
+    ()    () ()            are filled and last level is filled
+                           from left to right .
+
+           ()
+         /    \            This is not a complete tree , as
+       ()       ()         last level is not filled from left
+      /  \        \
+    ()    ()       ()
+
+           ()
+         /                 This is also not a complete tree
+       ()                  because the 2nd level is missing.
+      /  \
+    ()    ()
+
+2)
+ (i) The value of every node is greater than or equal
+     to its children
+     ex:
+                (20)
+              /     \        Like here 20 is the root
+            (10)     (15)    it's children are smaller .
+           /  \      /
+         (4)   (5) (6)
+
+                (20)
+              /     \        complete       ☑️
+            (10)     (21)    heap property  ❌
+           /  \      /       21>20 , not satisfying the heap
+         (4)   (5) (6)       property .
+
+         what we have here is called max heap , because root
+         holds the maximum value .
+
+   (ii) The value of every node is smaller than or equal
+         to its children
+         ex:
+                    (5)
+                  /     \        Like here 5 is the root
+                (15)     (10)    it's children are larger .
+               /   \
+             (20)   (25)
+
+                    (5)
+                  /     \        complete       ☑️
+                (15)     (3)     heap property  ❌
+               /    \            3<5 , not satisfying the heap
+             (20)   (25)         property .
+
+             what we have here is called min heap , because root
+             holds the minimum value .
+
+we usually use an array to implement a heap, even though heap is
+conceptually a binary tree , but because heaps are complete binary
+trees and we don't have holes in them
+it's more efficient to use them as arrays .
+if it has n nodes it will have height = log n
+(A complete binary tree has height log n)
+
+• Heap using Array
+
+                 (50)              Node  -> i
+              /       \            Parent(i) -> |i/2|  <- floor value
+            (40)      (45)         left_child -> 2*i
+          /    \      /   \        right_child -> 2*i+1
+        (30)  (20)  (35)  (10)
+
+        [50,40,45,30,20,35,10]
+         1   2  3  4  5  6  7
+
+here we are starting from the index 1 ,
+if we will start from index 0:
+Node -> i
+left_child -> 2*i+1
+right_child -> 2*i+2
+parent(i) -> |i-1/2|
+• Insertion in HEAP •
+
+            (50)
+         /       \              1   2  3  4  5  6  7
+       (40)      (45)          [50,40,45,30,20,35,10]
+     /    \      /   \
+   (30)  (20)  (35)  (10)
+
+   INSERT 60
+
+                   (50)
+                /       \           1   2  3  4  5  6  7  8
+              (40)      (45)       [50,40,45,30,20,35,10,60]
+            /    \      /   \
+          (30)  (20)  (35)  (10)
+          /
+        (60)
+
+                   (50)
+                /       \
+              (40)      (45)          inserted value > parent
+            /    \      /   \         bubble up
+          (60)  (20)  (35)  (10)
+          /
+        (30)
+                   (50)
+                /       \
+              (60)      (45)          inserted value > parent
+            /    \      /   \         bubble up
+          (40)  (20)  (35)  (10)
+          /
+        (30)
+                   (60)
+                /       \
+              (50)      (45)          inserted value > parent
+            /    \      /   \         bubble up
+          (40)  (20)  (35)  (10)
+          /
+        (30)
+
+                       [60,50,45,40,20,35,10,30]
+                        1   2  3  4  5  6  7  8
+   INSERT 46
+                   (60)
+                /       \
+              (50)      (45)
+            /    \      /   \
+          (40)  (20)  (35)  (10)
+          /  \
+        (30)  (46)
+        [60,50,45,40,20,35,10,30,46]
+         1   2  3  4  5  6  7  8  9
+
+                   (60)
+                /       \
+              (50)       (45)          inserted value > parent
+            /     \      /   \                       bubble up
+          (46)   (20)  (35)  (10)
+          /  \
+        (30)  (40)
+        [60,50,45,46,20,35,10,30,40]
+         1   2  3  4  5  6  7  8  9
+
