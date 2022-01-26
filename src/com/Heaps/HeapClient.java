@@ -25,12 +25,60 @@ class Heap{
         }
 
     }
+    //remove()
+    public void remove(){
+        if(size==0)
+            throw new IllegalStateException();
+        // put the last element into the root
+        items[0]=items[size-1];
+        // decrement the size (deleting the last element)
+        size--;
+
+        int index = 0 ;
+        while(index<=size && !isValidParent(index)){
+            int largerChildIndex = largerChildIndex(index);
+            swap(index,largerChildIndex);
+            index=largerChildIndex;
+
+        }
+    }
+
+    // HELPER METHODS
+    //largerChildIndex
+    private int largerChildIndex(int index){
+        return (leftChild(index)>rightChild(index)) ?
+                leftChildIndex(index) :
+                rightChildIndex(index) ;
+    }
+    // isValidParent
+    private boolean isValidParent(int index){
+        return items[index]>=leftChild(index) &&
+                items[index]>=rightChild(index);
+    }
+    //leftChildIndex
+    private int leftChildIndex(int index){
+        return (index*2)+1;
+    }
+    //leftChild
+    private int leftChild(int index){
+        return items[leftChildIndex(index)];
+    }
+
+    //rightChildIndex
+    private int rightChildIndex(int index){
+        return (index+1)+2;
+    }
+    //rightChild
+    private int rightChild(int index){
+        return items[rightChildIndex(index)];
+    }
     // swap
     private void swap(int first,int second){
         int temp = items[first];
         items[first] = items[second];
         items[second] = temp;
     }
+
 }
 public class HeapClient {
     public static void main(String[] args) {
